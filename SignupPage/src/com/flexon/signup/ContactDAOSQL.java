@@ -3,15 +3,15 @@ package com.flexon.signup;
 import java.sql.*;
 
 public class ContactDAOSQL {
-	private static final String USERNAME = "javatest";
-	private static final String PASSWORD = "1234";
+	private static final String USERNAME = "root";
+	private static final String PASSWORD = "abc123";
 	private static final String CONN_STRING = "jdbc:mysql://localhost:3306/hello_java";
 	
 	public void printContacts(){
 		Connection conn = null;
 	    
 	    try {
-	      //  Class.forName("com.mysql.jdbc.Driver");
+	        // Class.forName("com.mysql.jdbc.Driver");
 	        conn = (Connection) DriverManager.getConnection(CONN_STRING,USERNAME,PASSWORD);
 	        System.out.println("Connected");
 	        
@@ -38,8 +38,8 @@ public class ContactDAOSQL {
 	        }
 	        st.close();
 	        
-	    }catch (SQLException e){
-	    System.err.println(e);
+	    }catch (Exception exc){
+	    	exc.printStackTrace();
 	    }		
 	}
 }
